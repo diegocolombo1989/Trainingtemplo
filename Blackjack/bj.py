@@ -1,32 +1,33 @@
 
+
+
 # import random
 
+# print('\t-'*20)
+# print('\n')
+# cab ='''                                                                   BLACKJACK                                        \n'''    
+# print(cab)
+# print('\t-'*20)
+# print('\n'*2)
 
-# cartas  = ["A", "2", "3", "4","5", "6","7", "8", "9","10","J", "Q","K"]
+# jogadores = int(input('\nInforme a quantidade de jogadores: '))
+
+
+# cartas = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+
+
 # def embaralhar(cartas):
-#     lista = []
-   
-#     for e in range(len(cartas)):
-#         r = random.choice(cartas)
-#         print(r)
-#         if lista == [] and r == 'A':
-#             lista.append(11)
-#             continue
-#         if r == 'A' or r == 'J' or r == 'Q' or r == 'K':
-#             lista.append(10)
-
-#         else: lista.append(r)
-#         cartas.remove(r)
-
-#     return lista
-
-
-# dealer = print(embaralhar(cartas))
-
+#     lista_embaralha = []
+#     dealer = random.choice(cartas)
+    
+#     for dealer in cartas:
+#         print(dealer)
+#     return lista_embaralha
+    
+# print(embaralhar(dealer))
 
 import random
 
-cartas = ["A", "2", "3", "4","5", "6","7", "8", "9","10","J","Q","K"]
 print('\t-'*20)
 print('\n')
 cab ='''                                                                   BLACKJACK                                        \n'''    
@@ -34,15 +35,30 @@ print(cab)
 print('\t-'*20)
 print('\n'*2)
 
-jogadores = int(input('\nInforme a quantidade de jogadores: '))
 
-cartas = ["A", "2", "3", "4","5", "6","7", "8", "9","10","J", "Q","K"]
-dealer = cartas
+cartas  = ["A", "2", "3", "4","5", "6","7", "8", "9","10","J", "Q","K"]
+def embaralhar(cartas):
+    lista = []
+    for e in range(len(cartas)):
+        dealer = random.choice(cartas)
+        #print(dealer)
+        if 'A' in dealer[0] and lista == []:
+            lista.append(11)
+            #lista.remove(lista['A'])
+            continue
+        if dealer == 'A' or dealer == 'J' or dealer == 'Q' or dealer == 'K':
+            lista.append(10)
+            #lista.remove(lista['A'], lista['J'], lista['Q'], ista['K'])
+            continue
+     
+    return lista
 
-def embaralhar(dealer):
-    lista_embaralha = []
-    random.choice = dealer
-    lista_embaralha.append(dealer)
-    return lista_embaralha
 
-print(embaralhar(dealer))
+#print(embaralhar(cartas))
+
+jogadores = int(input('Informe a quantidade de jogadores: \t'))
+
+vira_carta = (f"A sua carta virada foi:{embaralhar(cartas)} \t")
+somar_cartas = (f"A sua mão é de: {embaralhar(sum(cartas))} pontos\t")
+print('Deseja continuar?\t'*2)
+print('SIM\t NÃO\t')                             
